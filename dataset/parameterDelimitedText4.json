@@ -1,0 +1,31 @@
+{
+	"name": "parameterDelimitedText4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sink_linkedservice1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"output2": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": {
+					"value": "@dataset().output2",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

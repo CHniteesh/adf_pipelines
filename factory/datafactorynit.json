@@ -1,0 +1,15 @@
+{
+	"name": "datafactorynit",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fc5834b0-1c37-4259-a109-6c82dd6fabb2",
+		"tenantId": "19aea460-c0bc-476d-b389-7c750142d2a0"
+	}
+}

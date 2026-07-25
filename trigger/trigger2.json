@@ -1,0 +1,17 @@
+{
+	"name": "trigger2",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input1/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/805b6689-d24d-4753-ae81-c0bd9cd91e2e/resourceGroups/Nit/providers/Microsoft.Storage/storageAccounts/nitstorage1",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

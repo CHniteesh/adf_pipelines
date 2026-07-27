@@ -1,0 +1,59 @@
+{
+	"name": "Source_Dynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source_linkedservice1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Source_Container_name": {
+				"type": "string"
+			},
+			"Source_File_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().Source_File_name",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().Source_Container_name",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "dep_id",
+				"type": "String"
+			},
+			{
+				"name": "name",
+				"type": "String"
+			},
+			{
+				"name": "age",
+				"type": "String"
+			},
+			{
+				"name": "salary",
+				"type": "String"
+			},
+			{
+				"name": "Depertment",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,102 @@
+{
+	"name": "Blob_to_Blob_parameterisation_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Source_Dynamic",
+						"type": "DatasetReference",
+						"parameters": {
+							"Source_Container_name": {
+								"value": "@pipeline().parameters.Source_Container_name",
+								"type": "Expression"
+							},
+							"Source_File_name": {
+								"value": "@pipeline().parameters.Source_File_name",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Sink_Dynamic",
+						"type": "DatasetReference",
+						"parameters": {
+							"sink_container_name": {
+								"value": "@pipeline().parameters.Sink_Container_name",
+								"type": "Expression"
+							},
+							"Sink_file_name": {
+								"value": "@pipeline().parameters.Sink_file_name",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"Source_Container_name": {
+				"type": "string"
+			},
+			"Source_File_name": {
+				"type": "string"
+			},
+			"Sink_Container_name": {
+				"type": "string"
+			},
+			"Sink_file_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-07-27T04:05:15Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

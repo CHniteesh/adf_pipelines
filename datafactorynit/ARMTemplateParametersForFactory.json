@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactorynit"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"linkedservicestorage3_connectionString": {
+			"value": ""
+		},
+		"parameter AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"sink_linkedservice1_connectionString": {
+			"value": ""
+		},
+		"source_linkedservice1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "nithr.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "nitdb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "hr"
+		},
+		"parameter AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "nithr.database.windows.net"
+		},
+		"parameter AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "nitdb"
+		},
+		"parameter AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "hr"
+		},
+		"event tri_properties_typeProperties_scope": {
+			"value": "/subscriptions/805b6689-d24d-4753-ae81-c0bd9cd91e2e/resourceGroups/Nit/providers/Microsoft.Storage/storageAccounts/nitstorage1"
+		},
+		"eventtrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/805b6689-d24d-4753-ae81-c0bd9cd91e2e/resourceGroups/Nit/providers/Microsoft.Storage/storageAccounts/nitstorage1"
+		},
+		"nit_properties_typeProperties_scope": {
+			"value": "/subscriptions/805b6689-d24d-4753-ae81-c0bd9cd91e2e/resourceGroups/Nit/providers/Microsoft.Storage/storageAccounts/nitstorage1"
+		},
+		"tigger123_properties_typeProperties_scope": {
+			"value": "/subscriptions/805b6689-d24d-4753-ae81-c0bd9cd91e2e/resourceGroups/Nit/providers/Microsoft.Storage/storageAccounts/nitstorage1"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/805b6689-d24d-4753-ae81-c0bd9cd91e2e/resourceGroups/Nit/providers/Microsoft.Storage/storageAccounts/nitstorage1"
+		},
+		"trigger2_properties_typeProperties_scope": {
+			"value": "/subscriptions/805b6689-d24d-4753-ae81-c0bd9cd91e2e/resourceGroups/Nit/providers/Microsoft.Storage/storageAccounts/nitstorage1"
+		}
+	}
+}
